@@ -1,0 +1,44 @@
+body {
+	background-color: #bbb;
+}
+
+.myClass{
+	text-align: center;
+	border-width: 1px;
+	border-style: solid;
+}
+
+label.form-check-label{
+    margin-top: 45px;
+}
+
+#id_paid{
+    margin-top: 50px;
+}
+
+.table{
+	font-size: 13px;
+	text-align: center;
+	width: 95%;
+	margin: auto;
+	text-align: center;
+}
+
+.table tr:nth-child(odd){
+	background: #B8CAE4
+}
+
+.table tr:nth-child(even){
+	background: #dae5f4
+}
+
+.success{
+	list-style: none;
+	background-color: #2e6da4;
+	color: white;
+	text-align: center;
+}
+
+.form-check-input {
+	margin-top: 50px;
+}

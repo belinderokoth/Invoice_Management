@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load bootstrap5 %}
+
+{% block content %}
+
+	<h1 class="text-center text-primary m-5 pt-5">{{title}}</h1>
+
+	<div class="row m-5">	
+		<div class="col-sm-7">
+			<form method='POST' action=''>
+				{% csrf_token %}
+				
+					{% for field in form %}
+					
+						{%	bootstrap_field field %}
+					
+					{% endfor %}				
+				
+				<input class="btn btn-primary" type="submit" value='Save'/>
+			</form>
+		</div>
+		<div class="recent col-sm-5">
+			<div class="text-center h3">
+				<span><strong>Recent invoices: </strong></span>
+				<span class="text-primary"><strong>{{total_invoices}}</strong></span>
+			</div>
+			
+			{% for instance in queryset %}
+			<div class="card m-3">
+				<div class="p-2"><strong>Name: </strong> {{instance.name}}</div>
+				<div class="p-2"><strong>Date: </strong>{{instance.invoice_date}}</div>
+				<div class="p-2"><strong>Total: </strong>${{instance.total_price}}</div><br>
+			</div>			
+			{% endfor %}
+		</div>
+	</div>
+	
+{% endblock %}
